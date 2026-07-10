@@ -6,6 +6,8 @@ info:
 collections:
   - name: "Dubai Mall — MCP API"
     path: "collections/Dubai Mall — MCP API"
+  - name: "Sample API Collection"
+    path: "collections/Sample API Collection"
 
 specs:
 
