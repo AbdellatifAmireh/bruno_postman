@@ -1,0 +1,21 @@
+meta {
+  name: Get Parkings (live)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{API_URL}}/api/v1/parkings/9999
+  body: none
+  auth: none
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getParkings — live bay occupancy.
+}

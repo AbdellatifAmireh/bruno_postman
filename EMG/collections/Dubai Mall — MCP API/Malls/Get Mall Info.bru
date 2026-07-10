@@ -1,0 +1,26 @@
+meta {
+  name: Get Mall Info
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{API_URL}}/api/v1/malls/1?extends=carousel&lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  extends: carousel
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getMallInfo — mall record with carousel.
+}

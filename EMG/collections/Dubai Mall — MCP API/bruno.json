@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "Dubai Mall — MCP API",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

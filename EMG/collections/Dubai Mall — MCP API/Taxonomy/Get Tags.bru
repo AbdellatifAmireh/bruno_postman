@@ -1,0 +1,25 @@
+meta {
+  name: Get Tags
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{API_URL}}/api/v1/tags?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getTags
+}

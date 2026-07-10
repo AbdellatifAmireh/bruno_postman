@@ -1,0 +1,23 @@
+meta {
+  name: Backend proxy (catch-all example)
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{APP_URL}}/api/v1/tags?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  app/api/[...path] forwards to the backend with server-side auth; v3/* and v1/partners are signed server-side automatically.
+}

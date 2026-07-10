@@ -1,0 +1,26 @@
+meta {
+  name: Get Stores (full)
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{API_URL}}/api/v1/stores?extends=categories,subCategories,tags,location,simple-parking,town&lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  extends: categories,subCategories,tags,location,simple-parking,town
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getStores — ~6MB payload, can take ~20s.
+}

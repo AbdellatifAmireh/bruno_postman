@@ -1,0 +1,25 @@
+meta {
+  name: V3 and Partners (JWT POST)
+  seq: 8
+}
+
+script:pre-request {
+  const CryptoJS = require("crypto-js");
+
+  const secret = bru.getEnvVar("JWT_SECRET");
+  if (!secret) {
+    throw new Error("JWT_SECRET is not set — select the Staging or Production environment before sending.");
+  }
+  const lang = bru.getEnvVar("lang") || bru.getVar("lang") || "en";
+  const tokenType = bru.getEnvVar("TOKEN_TYPE") || "Web";
+
+  const b64url = (wa) =>
+    CryptoJS.enc.Base64.stringify(wa).replace(/=+$/, "").replace(/\+/g, "-").replace(/\//g, "_");
+
+  const header = b64url(CryptoJS.enc.Utf8.parse(JSON.stringify({ typ: "JWT", alg: "HS256" })));
+  const payload = b64url(CryptoJS.enc.Utf8.parse(JSON.stringify({ lang: lang, token_type: tokenType })));
+  const signingInput = header + "." + payload;
+  const signature = b64url(CryptoJS.HmacSHA256(signingInput, secret));
+
+  bru.setVar("jwt", signingInput + "." + signature);
+}

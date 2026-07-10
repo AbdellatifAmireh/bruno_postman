@@ -1,0 +1,23 @@
+meta {
+  name: Emaar - Hospitality Offers (proxy)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{APP_URL}}/api/emaar/hospitality-offers?lang={{ube_lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{ube_lang}}
+}
+
+headers {
+  Accept: application/json
+}
+
+docs {
+  App proxy to UBE offers.
+}

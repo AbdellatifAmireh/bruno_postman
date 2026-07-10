@@ -1,0 +1,25 @@
+meta {
+  name: Get Static Pages
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{API_URL}}/api/v1/malls/1/staticpages?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getStaticPages
+}

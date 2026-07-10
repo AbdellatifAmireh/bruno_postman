@@ -1,0 +1,26 @@
+meta {
+  name: OneApp - Property Launches
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{ONEAPP_API_URL}}/oneappnewsandpr/v2/launchesoffers
+  body: json
+  auth: none
+}
+
+headers {
+  x-api-key: {{ONEAPP_API_KEY}}
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "InputType": "LAUNCHES"
+  }
+}
+
+docs {
+  Upstream behind GET /api/emaar/property-launches.
+}

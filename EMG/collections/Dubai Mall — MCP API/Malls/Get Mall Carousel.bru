@@ -1,0 +1,25 @@
+meta {
+  name: Get Mall Carousel
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{API_URL}}/api/v1/malls/1/carousel?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getMallCarousel
+}

@@ -1,0 +1,26 @@
+meta {
+  name: Revalidate cache tag
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{APP_URL}}/api/revalidate
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+  x-revalidate-secret: {{REVALIDATE_SECRET}}
+}
+
+body:json {
+  {
+    "tag": "stores"
+  }
+}
+
+docs {
+  Body { "tag": "<tag>" } or { "tag": "all" }. Valid tags = CACHE_TAGS keys.
+}

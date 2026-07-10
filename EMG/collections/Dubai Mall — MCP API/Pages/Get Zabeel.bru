@@ -1,0 +1,25 @@
+meta {
+  name: Get Zabeel
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{API_URL}}/api/v1/zabeel/1?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getZabeel
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Get Top Stores V8 (dine)
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{API_URL}}/api/v8/1/stores/top?pcat=dine
+  body: none
+  auth: none
+}
+
+params:query {
+  pcat: dine
+}
+
+headers {
+  X-Token: {{API_TOKEN_V8}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getTopStores — v8, uses API_TOKEN_V8, rejects a lang param.
+}

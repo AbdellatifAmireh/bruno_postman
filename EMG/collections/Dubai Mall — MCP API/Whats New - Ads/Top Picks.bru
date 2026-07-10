@@ -1,0 +1,25 @@
+meta {
+  name: Top Picks
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{API_URL}}/api/v1/ads/whatsnew/topPicks?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getTopPicks
+}

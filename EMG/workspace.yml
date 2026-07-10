@@ -1,0 +1,12 @@
+opencollection: 1.0.0
+info:
+  name: "EMG"
+  type: workspace
+
+collections:
+  - name: "Dubai Mall — MCP API"
+    path: "collections/Dubai Mall — MCP API"
+
+specs:
+
+docs: ''

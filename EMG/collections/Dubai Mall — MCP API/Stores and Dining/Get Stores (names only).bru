@@ -1,0 +1,25 @@
+meta {
+  name: Get Stores (names only)
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{API_URL}}/api/v1/stores?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getStoreNames — same endpoint, projected to id/name in app.
+}

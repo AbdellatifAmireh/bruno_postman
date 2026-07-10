@@ -1,0 +1,25 @@
+meta {
+  name: Get Top Stores V8 (shop)
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{API_URL}}/api/v8/1/stores/top?pcat=shop
+  body: none
+  auth: none
+}
+
+params:query {
+  pcat: shop
+}
+
+headers {
+  X-Token: {{API_TOKEN_V8}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getTopStores — v8, uses API_TOKEN_V8, rejects a lang param.
+}

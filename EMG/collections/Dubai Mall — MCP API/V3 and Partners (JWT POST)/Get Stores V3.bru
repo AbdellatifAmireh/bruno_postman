@@ -1,0 +1,30 @@
+meta {
+  name: Get Stores V3
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{API_URL}}/api/v3/stores?extends=town
+  body: text
+  auth: none
+}
+
+params:query {
+  extends: town
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+  Content-Type: text/plain
+}
+
+body:text {
+  {{jwt}}
+}
+
+docs {
+  getStoresV3 — lang carried in the JWT body, not the query string.
+}

@@ -1,0 +1,25 @@
+meta {
+  name: Get Page Partner
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{API_URL}}/api/v1/pagePartner/{{slug}}?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getPagePartner — set the {{slug}} env var.
+}

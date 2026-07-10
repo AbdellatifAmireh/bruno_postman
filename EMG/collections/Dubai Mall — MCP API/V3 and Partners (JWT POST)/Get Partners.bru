@@ -1,0 +1,30 @@
+meta {
+  name: Get Partners
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{API_URL}}/api/v1/partners?lang={{lang}}
+  body: text
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+  Content-Type: text/plain
+}
+
+body:text {
+  {{jwt}}
+}
+
+docs {
+  getPartners
+}

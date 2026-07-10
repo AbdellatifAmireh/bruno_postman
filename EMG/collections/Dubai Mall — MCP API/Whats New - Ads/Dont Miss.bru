@@ -1,0 +1,25 @@
+meta {
+  name: Dont Miss
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{API_URL}}/api/v1/ads/whatsnew/dontMiss?lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getDontMiss
+}

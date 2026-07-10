@@ -1,0 +1,26 @@
+meta {
+  name: Get Products
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{API_URL}}/api/v1/products?extends=targetAge,targetCategories,targetGender&lang={{lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  extends: targetAge,targetCategories,targetGender
+  lang: {{lang}}
+}
+
+headers {
+  X-Token: {{API_TOKEN}}
+  Token-Type: {{TOKEN_TYPE}}
+  Accept: application/json
+}
+
+docs {
+  getProducts
+}

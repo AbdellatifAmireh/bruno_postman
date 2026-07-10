@@ -1,0 +1,24 @@
+meta {
+  name: UBE - Hospitality Offers
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{UBE_API_URL}}/data/offers?lang={{ube_lang}}
+  body: none
+  auth: none
+}
+
+params:query {
+  lang: {{ube_lang}}
+}
+
+headers {
+  x-api-key: {{UBE_API_KEY}}
+  Accept: application/json
+}
+
+docs {
+  Upstream behind GET /api/emaar/hospitality-offers. Default lang: en-ae.
+}
